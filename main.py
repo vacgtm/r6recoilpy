@@ -5,6 +5,14 @@ import threading
 import ctypes, os
 from modules.readjson import read_json as rjv
 
+
+### PLEASE NOTE,  NO MATTER WHAT PRESET YOU USE, THE TOGGLE KEY AND RESET BUTTON WRITTEN IN configuration/config.json WILL ALWAYS BE USED ###
+
+
+
+
+
+
 mouse_controller = mouse.Controller()
 is_pressed = False
 is_left_pressed = False
@@ -15,7 +23,7 @@ x_val = 0
 y_val = 0
 speed = 0
 toggle_key = "p"
-
+reset_button = "h"
 
 
 toggled = False
@@ -55,6 +63,8 @@ def on_press(key):
         else:
             print("toggled")
             toggled = True
+    elif key == keyboard.KeyCode.from_char("h"):
+        return init()
 
 
 def init():
@@ -79,23 +89,26 @@ def init():
         run_all("custom")
 
 def run_all(pre):
-    global x_val, y_val, speed, toggle_key
+    global x_val, y_val, speed, toggle_key, reset_button
     if pre == "g36c":
         
         x_val = 0.999
         y_val = 6.9
         speed = 0.025
-        toggle_key = "p"
+        toggle_key = rjv("configuration/config.json", "toggle_key")
+        reset_button = rjv("configuration/config.json", "reset_button")
     elif pre == "mp7":
         x_val = 0.05
         y_val = 7.4
         speed = 0.02
-        toggle_key = "p"
+        toggle_key = rjv("configuration/config.json", "toggle_key")
+        reset_button = rjv("configuration/config.json", "reset_button")
     elif pre == "custom":
         x_val = rjv("configuration/config.json", "x_val")
         y_val = rjv("configuration/config.json", "y_val")
         speed = rjv("configuration/config.json", "speed")
         toggle_key = rjv("configuration/config.json", "toggle_key")
+        reset_button = rjv("configuration/config.json", "reset_button")
     
     os.system("cls")
     print("Loaded.")
