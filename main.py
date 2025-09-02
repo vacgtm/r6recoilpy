@@ -119,7 +119,7 @@ keyboard_listener.join()
 
 
 
-
+#all settings just use compensators
 
 
 ### Bandit Settings ###
