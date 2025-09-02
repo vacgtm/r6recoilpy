@@ -14,9 +14,9 @@ is_right_pressed = False
 
 
 toggled = False
-x_val = 0.98
-y_val = 6.4
-speed = 0.019
+x_val = 0.999
+y_val = 6.9
+speed = 0.025
 toggle_key = "p"
 
 def move_mouse(dx, dy):
@@ -136,9 +136,9 @@ keyboard_listener.join()
 
 ###ASH SETTINGS G36C###
 #same sens as always
-#x_val = 0.98
-#y_val = 6.4
-#speed = 0.019
+#x_val = 0.999
+#y_val = 6.9
+#speed = 0.025
 ############################
 
 ## self code ##
