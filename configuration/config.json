@@ -2,5 +2,6 @@
     "x_val": 0.999,
     "y_val": 6.9,
     "speed": 0.025,
-    "toggle_key": "p"
+    "toggle_key": "p",
+    "reset_button": "h"
 }
