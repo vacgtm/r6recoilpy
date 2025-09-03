@@ -62,7 +62,7 @@ def init():
     global toggle_key, reset_button
     os.system("cls")
     print("-- r6 recoil compensator --")
-    print("--- Presets ---\nCustom\nG36C\nMP7\nSMG12")
+    print("--- Presets ---\nCustom\nG36C\nMP7\nSMG12\nMP5")
 
     toggle_key = rjv("configuration/config.json", "toggle_key")
     reset_button = rjv("configuration/config.json", "reset_button")
@@ -87,6 +87,10 @@ def run_all(pre):
         x_val = 3.5
         y_val = 23
         speed = 0.047
+    elif pre.lower() == "mp5":
+        x_val = 0.05
+        y_val = 11
+        speed = 0.05
     elif pre.lower() == "custom":
         x_val = rjv("configuration/config.json", "x_val")
         y_val = rjv("configuration/config.json", "y_val")
